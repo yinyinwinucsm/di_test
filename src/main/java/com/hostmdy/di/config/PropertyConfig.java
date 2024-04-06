@@ -31,7 +31,7 @@ public class PropertyConfig {
 	
 	@Bean
 	FakeDataSource fakeDataSource() {
-		return new FakeDataSource(username, "password", url, engine);
+		return new FakeDataSource(username, password, url, engine);
 	}
 	
 	@Bean
