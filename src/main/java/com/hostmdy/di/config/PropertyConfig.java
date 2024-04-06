@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
@@ -12,7 +13,11 @@ import com.hostmdy.di.datasource.CloudDataSource;
 import com.hostmdy.di.datasource.FakeDataSource;
 
 @Configuration
-@PropertySource({"mysql_config.properties","oracle_config.properties"})
+//@PropertySource({"mysql_config.properties","oracle_config.properties"})
+@PropertySources({
+	@PropertySource("mysql_config.properties"),
+	@PropertySource("oracle_config.properties")
+})
 public class PropertyConfig {
 	@Autowired
 	Environment env;
@@ -31,7 +36,7 @@ public class PropertyConfig {
 	
 	@Bean
 	FakeDataSource fakeDataSource() {
-		return new FakeDataSource(username, password, url, engine);
+		return new FakeDataSource(env.getProperty("username"), env.getProperty("password"), url, engine);
 	}
 	
 	@Bean

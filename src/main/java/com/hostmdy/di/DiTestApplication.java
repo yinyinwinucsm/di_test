@@ -23,10 +23,10 @@ public class DiTestApplication {
 		
 		CloudDataSource cloudDataSource=context.getBean(CloudDataSource.class);
 		System.out.println("Cloud Config :");
-		System.out.println("user" + cloudDataSource.getUser());
-		System.out.println("key" + cloudDataSource.getKey());
-		System.out.println("auth" + cloudDataSource.getAuth());
-		System.out.println("address" + cloudDataSource.getAddress());
+		System.out.println("user : " + cloudDataSource.getUser());
+		System.out.println("key : " + cloudDataSource.getKey());
+		System.out.println("auth : " + cloudDataSource.getAuth());
+		System.out.println("address : " + cloudDataSource.getAddress());
 
 	}
 
