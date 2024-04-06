@@ -13,11 +13,6 @@ import com.hostmdy.di.datasource.CloudDataSource;
 import com.hostmdy.di.datasource.FakeDataSource;
 
 @Configuration
-//@PropertySource({"mysql_config.properties","oracle_config.properties"})
-@PropertySources({
-	@PropertySource("mysql_config.properties"),
-	@PropertySource("oracle_config.properties")
-})
 public class PropertyConfig {
 	@Autowired
 	Environment env;
@@ -36,7 +31,7 @@ public class PropertyConfig {
 	
 	@Bean
 	FakeDataSource fakeDataSource() {
-		return new FakeDataSource(env.getProperty("username"), env.getProperty("password"), url, engine);
+		return new FakeDataSource(username, "password", url, engine);
 	}
 	
 	@Bean
