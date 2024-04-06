@@ -1,0 +1,13 @@
+name: "MgMg"
+age: 1000
+height: 5.5
+fruit: ["apple","banana","payaya"]
+user:
+  name: "KyawKyaw"
+  role: "customer"
+  age: 23
+  
+flag1: True #TRUE #yes #true
+flag2: False #no
+
+dollar: '$'
